@@ -26,13 +26,7 @@ export class ListadoUsuarioComponent implements OnInit {
     });
   }
 
-  editarUsuario(usuario: Usuario) {
-    // Implementa la lógica para editar el usuario aquí
-    console.log('Editar usuario:', usuario);
-  }
-
   eliminarUsuario(usuario: Usuario) {
-    // Implementa la lógica para eliminar el usuario aquí
     console.log('Eliminar usuario:', usuario);
   }
 

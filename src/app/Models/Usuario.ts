@@ -9,7 +9,7 @@ export class Usuario {
     usu_email: string;
     usu_password: string;
     usu_documento: string;
-    tipoDocumento: TipoDocumento;
+    tipo_documento: TipoDocumento;
     estado: Estado;
     rol: Rol;
 }

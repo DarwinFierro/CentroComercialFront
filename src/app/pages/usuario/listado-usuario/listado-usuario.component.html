@@ -1,35 +1,36 @@
-
 <h1>Listado de Usuarios</h1>
+<div *ngIf="!isLoading">
+  <table id="usuariosTable" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Documento</th>
+        <th>Email</th>
+        <th>Rol</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <td>{{ usuario.usu_nombre }}</td>
+        <td>{{ usuario.usu_apellido }}</td>
+        <td>{{ usuario.usu_documento }}</td>
+        <td>{{ usuario.usu_email }}</td>
+        <td>{{ usuario.rol.rol_name }}</td>
+        <td>
+          <button class="btn btn-primary" [routerLink]="['/EditarUsuario', usuario.usu_id]">
+            <i class="fas fa-pencil-alt"></i>
+          </button>
+          <button class="btn btn-danger" (click)="eliminarUsuario(usuario)">
+            <i class="fas fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-  <div *ngIf="!isLoading">
-    <table id="usuariosTable" class="table table-striped">
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Documento</th>
-            <th>Email</th>
-            <th>Rol</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let usuario of usuarios">
-            <td>{{ usuario.usu_nombre }}</td>
-            <td>{{ usuario.usu_apellido }}</td>
-            <td>{{ usuario.usu_documento }}</td>
-            <td>{{ usuario.usu_email }}</td>
-            <td>{{ usuario.rol.rol_name }}</td>
-            <td>
-                <button class="btn btn-primary" [routerLink]="['/editar-usuario', usuario.usu_id]">Editar</button>
-              <button class="btn btn-danger" (click)="eliminarUsuario(usuario)">Eliminar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-  </div>
-  
-  <div *ngIf="isLoading">
-    <!-- Puedes agregar un indicador de carga aquí -->
-    Cargando usuarios...
-  </div>
+<div *ngIf="isLoading">
+  Cargando usuarios...
+</div>

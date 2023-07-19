@@ -1,4 +1,4 @@
 export class TipoDocumento{
-    id:number;
-    nombre:string;
+    tid_id:number;
+    tid_name:string;
 }

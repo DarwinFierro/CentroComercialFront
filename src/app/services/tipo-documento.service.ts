@@ -10,7 +10,7 @@ import { TipoDocumento } from "../Models/TipoDocumento";
 })
 export class TipoDocumentoService {
 
-    private URL: string = `${environment.apiUrl}/tipo-documento`;
+    private URL: string = `${environment.apiUrl}/tipoDocumento`;
 
     constructor(private http: HttpClient) { }
 
