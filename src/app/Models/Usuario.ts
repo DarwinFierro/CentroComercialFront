@@ -3,12 +3,12 @@ import { TipoDocumento } from "./TipoDocumento";
 import { Rol } from "./rol";
 
 export class Usuario {
-    id: number;
-    nombre: string;
-    apellido: string;
-    email: string;
-    password: string;
-    documento: string;
+    usu_id: number;
+    usu_nombre: string;
+    usu_apellido: string;
+    usu_email: string;
+    usu_password: string;
+    usu_documento: string;
     tipoDocumento: TipoDocumento;
     estado: Estado;
     rol: Rol;
