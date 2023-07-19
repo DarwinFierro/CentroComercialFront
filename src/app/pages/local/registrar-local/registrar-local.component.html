@@ -1,0 +1,64 @@
+<h1>Registrar Local</h1>
+
+<form id="form">
+    <div class="d-flex">
+        <div class="col">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese Nombre" required>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="apellido">telefono</label>
+                <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese Apellido"
+                    required>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label for="tipoDocumento">Tipo de Comercio</label>
+                <select class="form-control" id="tipoComercio" name="tipoComercio" required (change)="listarComercio()">
+                    <option value="">Seleccione un tipo de comercio</option>
+                    <option *ngFor="let tipoComercio of lstTiposComercio" [value]="tipoComercio.tic_id">{{
+                        tipoComercio.tic_name }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="col" *ngIf="lstComercios && lstComercios.length > 0">
+            <div class="form-group">
+              <label for="comercio">Comercio</label>
+              <select class="form-control" id="comercio" name="comercio" required>
+                <option value="">Seleccione el comercio de su local</option>
+                <option *ngFor="let comercio of lstComercios" [value]="comercio.com_id">{{ comercio.com_nombre }}</option>
+              </select>
+            </div>
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label for="usuario">Representante Legal</label>
+                <select class="form-control" id="usuario" name="usuario" required>
+                    <option value="">Seleccione un representante registrado</option>
+                    <option *ngFor="let usuario of lstUsuarios" [value]="usuario.usu_id">{{
+                        usuario.usu_nombre }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="estado">Estado</label>
+                <select class="form-control" id="estado" name="estado" required>
+                    <option value="">Seleccione un estado</option>
+                    <option *ngFor="let estado of lstEstados" [value]="estado.est_id">{{ estado.est_name }}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="guardarCambios()">Guardar Cambios</button>
+</form>

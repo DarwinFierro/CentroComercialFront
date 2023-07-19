@@ -1,0 +1,36 @@
+<h1>Listado de Locales</h1>
+<div *ngIf="!isLoading">
+  <table id="usuariosTable" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Telefono</th>
+        <th>Representante legal</th>
+        <th>estado del local</th>
+        <th>tipo de comercio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let local of locales">
+        <td>{{ local.loc_nombre }}</td>
+        <td>{{ local.loc_telefono }}</td>
+        <td>{{ local.usuario.usu_nombre }} {{local.usuario.usu_apellido}}</td>
+        <td>{{ local.estado.est_name }}</td>
+        <td>{{ local.comercio.tipo_comercio.tic_name }} - {{ local.comercio.com_nombre }}</td>
+        <td>
+          <button class="btn btn-primary" [routerLink]="['/editarLocal', local.loc_id]">
+            <i class="fas fa-pencil-alt"></i>
+          </button>
+          <button class="btn btn-danger" (click)="eliminarLocal(local)">
+            <i class="fas fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="isLoading">
+  Cargando Locales...
+</div>

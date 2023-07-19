@@ -1,4 +1,4 @@
 export class TipoComercio{
-    id:number;
-    nombre:string;
+    tic_id:number;
+    tic_name:string;
 }

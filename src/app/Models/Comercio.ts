@@ -1,7 +1,7 @@
 import { TipoComercio } from "./TipoComercio";
 
 export class Comercio{
-    id:number;
-    nombre:string;
-    tipoComercio: TipoComercio;
+    com_id:number;
+    com_nombre:string;
+    tipo_comercio: TipoComercio;
 }

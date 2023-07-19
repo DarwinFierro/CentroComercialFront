@@ -13,11 +13,19 @@ export class LocalService {
 
   constructor(private http: HttpClient) { }
 
-  getUsuario(): Observable<Local[]> {
+  getLocal(): Observable<Local[]> {
     return this.http.get<Local[]>(this.URL);
   }
 
-  crear(local: Local): Observable<void> {
+  getLocalId(id:number): Observable<Local> {
+    return this.http.get<Local>(`${this.URL}/${id}`);
+  }
+
+  crearLocal(local: Local): Observable<void> {
     return this.http.post<void>(`${this.URL}`, local);
+  }
+
+  updateLocal(id:number, local: Local): Observable<void> {
+    return this.http.put<void>(`${this.URL}/${id}`, local);
   }
 }

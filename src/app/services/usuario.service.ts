@@ -17,6 +17,10 @@ export class UsuarioService {
     return this.http.get<Usuario[]>(this.URL);
   }
 
+  getUsuarioLocal(): Observable<Usuario[]> {
+    return this.http.get<Usuario[]>(`${this.URL}/local`);
+  }
+
   crearUsuario(usuario: Usuario): Observable<void> {
     return this.http.post<void>(`${this.URL}`, usuario);
   }

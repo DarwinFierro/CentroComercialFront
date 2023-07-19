@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SidebarComponent } from './sidebar.component';
+import { RegistrarLocalComponent } from './registrar-local.component';
 
-describe('SidebarComponent', () => {
-  let component: SidebarComponent;
-  let fixture: ComponentFixture<SidebarComponent>;
+describe('RegistrarLocalComponent', () => {
+  let component: RegistrarLocalComponent;
+  let fixture: ComponentFixture<RegistrarLocalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SidebarComponent ]
+      declarations: [ RegistrarLocalComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SidebarComponent);
+    fixture = TestBed.createComponent(RegistrarLocalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

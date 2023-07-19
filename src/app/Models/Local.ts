@@ -3,9 +3,9 @@ import { Estado } from "./Estado";
 import { Usuario } from "./Usuario";
 
 export class Local {
-    id: number;
-    nombre: string;
-    telefono: string;
+    loc_id: number;
+    loc_nombre: string;
+    loc_telefono: string;
     usuario: Usuario;
     estado: Estado;
     comercio: Comercio;

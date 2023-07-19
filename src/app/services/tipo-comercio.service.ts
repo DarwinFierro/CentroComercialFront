@@ -10,7 +10,7 @@ import { TipoComercio } from "../Models/TipoComercio";
 })
 export class TipoComercioService {
 
-    private URL: string = `${environment.apiUrl}/tipo-comercio`;
+    private URL: string = `${environment.apiUrl}/tipoComercio`;
 
     constructor(private http: HttpClient) { }
 
