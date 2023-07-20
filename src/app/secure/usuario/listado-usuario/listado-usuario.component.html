@@ -22,7 +22,7 @@
           <button class="btn btn-primary" [routerLink]="['/EditarUsuario', usuario.usu_id]">
             <i class="fas fa-pencil-alt"></i>
           </button>
-          <button class="btn btn-danger" (click)="eliminarUsuario(usuario)">
+          <button class="btn btn-danger" (click)="eliminarUsuario(usuario.usu_id)">
             <i class="fas fa-trash"></i>
           </button>
         </td>

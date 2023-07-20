@@ -93,7 +93,7 @@ export class RegistrarUsuarioComponent implements OnInit {
     this.usuarioService.crearUsuario(usuario).subscribe(data => {
       console.log(data);
       $('#form input, #form textarea, #form select').val('');
-      this.router.navigateByUrl('/dashboard/listarLocal');
+      this.router.navigateByUrl('/dashboard/listarUsuario');
     }, err => console.error(err));
   }
 }

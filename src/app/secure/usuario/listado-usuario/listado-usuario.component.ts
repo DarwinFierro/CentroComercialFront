@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/Models/Usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-listado-usuario',
@@ -26,8 +27,19 @@ export class ListadoUsuarioComponent implements OnInit {
     });
   }
 
-  eliminarUsuario(usuario: Usuario) {
-    console.log('Eliminar usuario:', usuario);
+  eliminarUsuario(id: number) {
+    this.usuarioService.deleteUsuario(id).subscribe(data => {
+      console.log(data);
+      
+      Swal.fire({
+        icon: 'success',
+        title: 'Correcto',
+        text: 'local Borrado Correctamente',
+      })
+      this.usuarioService.getUsuario().subscribe(data => {
+        this.usuarios = data;
+      });
+    });
   }
 
 }

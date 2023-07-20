@@ -33,6 +33,10 @@ export class UsuarioService {
     return this.http.put<Usuario[]>(`${this.URL}/${id}`, usuario);
   }
 
+  deleteUsuario(id:number): Observable<Usuario> {
+    return this.http.delete<Usuario>(`${this.URL}/${id}`);
+  }
+
   login(credentials: any): Observable<any> {
     return this.http.post<any>(`${environment.apiUrl}/login`, credentials);
   }

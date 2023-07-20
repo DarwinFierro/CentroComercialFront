@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Local } from 'src/app/Models/Local';
 import { RolBasedHideService } from 'src/app/rol-based-hide.service';
 import { LocalService } from 'src/app/services/local.service';
+import Swal from 'sweetalert2';
 
 declare var $: any;
 
@@ -55,6 +56,11 @@ export class ListarLocalComponent implements OnInit {
 
   eliminarLocal(id: number) {
     this.localService.deleteLocal(id).subscribe(data => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Correcto',
+        text: 'local Borrado Correctamente',
+      })
       this.localService.getLocal().subscribe(data => {
         this.locales = data;
       });

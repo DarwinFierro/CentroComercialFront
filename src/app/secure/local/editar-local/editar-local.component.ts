@@ -11,7 +11,6 @@ import { LocalService } from 'src/app/services/local.service';
 import { TipoComercioService } from 'src/app/services/tipo-comercio.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import Swal from 'sweetalert2';
-import { forkJoin } from 'rxjs';
 import { Observable } from "rxjs";
 
 declare var $: any;
@@ -139,8 +138,6 @@ export class EditarLocalComponent implements OnInit {
     estado.est_id = $('#estado').val();
     local.estado = estado;
 
-    console.log(local);
-
 
     Swal.fire({
       title: 'Estás seguro?',
@@ -152,7 +149,6 @@ export class EditarLocalComponent implements OnInit {
       confirmButtonText: 'Sí, Actualizar!'
     }).then((result) => {
       if (result.isConfirmed) {
-        console.log(local);
         this.update(local);
       }
     })
