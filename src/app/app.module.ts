@@ -3,21 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
 
 import { HttpClientModule } from '@angular/common/http';
-import { PublicComponent } from './pages/public/public.component';
+import { RouterModule } from '@angular/router';
+import { PublicModule } from './public/public.module';
+import { SecureModule } from './secure/secure.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PublicComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    PublicModule,
+    RouterModule,
+    SecureModule
   ],
   providers: [],
   bootstrap: [AppComponent]
