@@ -10,7 +10,7 @@ const routes: Routes = [
     path: 'dashboard',
     component:SecureComponent,
     loadChildren: () => import('./secure/secure.module').then(m => m.SecureModule),
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard], data: { allowedRoles: ['SUPER_OWNER', 'LOCAL_OWNER', 'WATCHMAN'] }
   },
 ];
 

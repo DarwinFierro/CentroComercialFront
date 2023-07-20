@@ -52,17 +52,13 @@ export class RegistrarLocalComponent implements OnInit {
   }
 
   listarComercio() {
-    // Obtener el tipo de comercio seleccionado del select
     const id = $('#tipoComercio').val();
-    // Verificar si se seleccionó un tipo de comercio
     if (id) {
-      // Obtener los comercios asociados al tipo de comercio seleccionado
       this.comercioService.getComercioId(id).subscribe(data => {
         this.lstComercios = data;
         console.log("lstComercios", this.lstComercios);
       });
     } else {
-      // Si no se seleccionó un tipo de comercio, vaciar la lista de comercios
       this.lstComercios = [];
     }
   }
@@ -110,7 +106,7 @@ export class RegistrarLocalComponent implements OnInit {
     this.localService.crearLocal(local).subscribe(data => {
       console.log(data);
       $('#form input, #form textarea, #form select').val('');
-      this.router.navigateByUrl('listarLocal');
+      this.router.navigateByUrl('/dashboard/listarLocal');
     }, err => console.error(err));
   }
 

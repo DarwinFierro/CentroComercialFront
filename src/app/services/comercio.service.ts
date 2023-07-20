@@ -18,12 +18,10 @@ export class ComercioService {
   }
 
   getComercioId(tipoComercioId: number): Observable<Comercio[]> {
-    // Construir el objeto de parámetros con el tipo_comercio_id
     let params = new HttpParams();
     if (tipoComercioId) {
       params = params.set('tipo_comercio_id', tipoComercioId.toString());
     }
-    // Agregar los parámetros a la URL de la solicitud
     return this.http.get<Comercio[]>(this.URL, { params: params });
   }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
-declare var $: any; // Debes asegurarte de tener jQuery incluido en tu proyecto
+declare var $: any;
 
 @Component({
   selector: 'app-login',
@@ -34,10 +34,10 @@ export class LoginComponent implements OnInit {
         const user = response.user;
         localStorage.setItem('rol_name', user.rol_name);
         localStorage.setItem('usu_nombre', user.usu_nombre);
+        localStorage.setItem('usu_id', user.usu_id);
         this.router.navigateByUrl('/dashboard/listarLocal');
       },
       (error) => {
-        // Manejar el error del inicio de sesión aquí
         console.error(error);
       }
     );

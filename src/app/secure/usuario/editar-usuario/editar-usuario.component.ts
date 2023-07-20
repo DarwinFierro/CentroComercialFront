@@ -138,9 +138,9 @@ export class EditarUsuarioComponent implements OnInit {
       data => {
         console.log(data);
         $('#form input, #form textarea, #form select').val('');
-        //this.router.navigateByUrl('listUser');
+        this.router.navigateByUrl('/dashboard/listarLocal');
       },
-      err => console.error(err) // Muestra el error en la consola
+      err => console.error(err)
     );
   }
   

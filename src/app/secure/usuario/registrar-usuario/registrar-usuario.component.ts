@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Estado } from 'src/app/Models/Estado';
 import { TipoDocumento } from 'src/app/Models/TipoDocumento';
 import { Usuario } from 'src/app/Models/Usuario';
@@ -31,6 +32,7 @@ export class RegistrarUsuarioComponent implements OnInit {
     private tipoDocumentoService: TipoDocumentoService,
     private roleService: RolService,
     private estadoService: EstadoService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -91,7 +93,7 @@ export class RegistrarUsuarioComponent implements OnInit {
     this.usuarioService.crearUsuario(usuario).subscribe(data => {
       console.log(data);
       $('#form input, #form textarea, #form select').val('');
-      //this.router.navigateByUrl('listUser');
+      this.router.navigateByUrl('/dashboard/listarLocal');
     }, err => console.error(err));
   }
 }

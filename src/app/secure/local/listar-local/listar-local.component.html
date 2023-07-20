@@ -8,7 +8,7 @@
         <th>Representante legal</th>
         <th>estado del local</th>
         <th>tipo de comercio</th>
-        <th>Acciones</th>
+        <th class="hiden">Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -18,11 +18,11 @@
         <td>{{ local.usuario.usu_nombre }} {{local.usuario.usu_apellido}}</td>
         <td>{{ local.estado.est_name }}</td>
         <td>{{ local.comercio.tipo_comercio.tic_name }} - {{ local.comercio.com_nombre }}</td>
-        <td>
-          <button class="btn btn-primary" >
+        <td class="hiden"> 
+          <button class="btn btn-primary custom-button" [routerLink]="['/dashboard/editarLocal', local.loc_id]" [attr.data-local-id]="local.usuario.usu_id">
             <i class="fas fa-pencil-alt"></i>
           </button>
-          <button class="btn btn-danger" (click)="eliminarLocal(local)">
+          <button class="btn btn-danger delete" (click)="eliminarLocal(local.loc_id)">
             <i class="fas fa-trash"></i>
           </button>
         </td>
@@ -34,5 +34,3 @@
 <div *ngIf="isLoading">
   Cargando Locales...
 </div>
-
-<!-- [routerLink]="['/editarLocal', local.loc_id]" -->

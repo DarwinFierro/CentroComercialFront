@@ -86,12 +86,7 @@ export class EditarLocalComponent implements OnInit {
     this.localService.getLocalId(id).subscribe(
       (localData) => {
         this.local = localData;
-        
-
-        // Obtener el id del tipo de comercio desde la variable local
         const idTipoComercio = this.local.comercio.tipo_comercio.tic_id;
-
-        // Llamar a listarComercioLlegada con el id del tipo de comercio obtenido
         this.listarComercioLlegada(idTipoComercio).subscribe(
           (comercioData) => {
             this.lstComercios = comercioData;
@@ -167,7 +162,7 @@ export class EditarLocalComponent implements OnInit {
     this.localService.updateLocal(this.id, local).subscribe(data => {
       console.log(data);
       $('#form input, #form textarea, #form select').val('');
-      this.router.navigateByUrl('listarLocal');
+      this.router.navigateByUrl('/dashboard/listarLocal');
     }, err => console.error(err));
   }
 

@@ -22,7 +22,7 @@ export class ListadoUsuarioComponent implements OnInit {
   listar() {
     this.usuarioService.getUsuario().subscribe(data => {
       this.usuarios = data;
-      this.isLoading = false; // Cambia el valor de isLoading una vez se carguen los datos
+      this.isLoading = false;
     });
   }
 

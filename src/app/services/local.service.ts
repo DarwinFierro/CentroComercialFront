@@ -28,4 +28,8 @@ export class LocalService {
   updateLocal(id:number, local: Local): Observable<void> {
     return this.http.put<void>(`${this.URL}/${id}`, local);
   }
+
+  deleteLocal(id:number): Observable<Local> {
+    return this.http.delete<Local>(`${this.URL}/${id}`);
+  }
 }

@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { PublicModule } from './public/public.module';
 import { SecureModule } from './secure/secure.module';
+import { RolBasedHideService } from './rol-based-hide.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { SecureModule } from './secure/secure.module';
     RouterModule,
     SecureModule
   ],
-  providers: [],
+  providers: [RolBasedHideService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
